@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2021-present Kaleidos INC
 
-FROM nginx:1.23-alpine
+FROM docker.io/library/nginx:1.23-alpine
 LABEL maintainer="support@taiga.io"
 
 COPY docker/default.conf /etc/nginx/conf.d/default.conf
