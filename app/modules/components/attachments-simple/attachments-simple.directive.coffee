@@ -12,6 +12,10 @@ AttachmentsSimpleDirective = () ->
             angular.element('#add-attach').click();
             return false;
 
+        scope.displayCameraInput = (event) ->
+            angular.element('#add-attach-camera').click();
+            return false;
+
     return {
         scope: {},
         bindToController: {
