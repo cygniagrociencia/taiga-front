@@ -39,33 +39,31 @@ class AttachmentsFullService extends taiga.Service
             @._attachmentsVisible = @._attachments.filter (it) -> !it.getIn(['file', 'is_deprecated'])
 
     addAttachment: (projectId, objId, type, file, editable = true, comment = false) ->
-        return @q (resolve, reject) =>
+        promise = @q (resolve, reject) =>
             if @attachmentsService.validate(file)
                 @.uploadingAttachments.push(file)
 
-                promise = @attachmentsService.upload(file, objId, projectId, type, comment)
-                promise.then (file) =>
+                uploadPromise = @attachmentsService.upload(file, objId, projectId, type, comment)
+                uploadPromise.then (uploadedFile) =>
                     @.uploadingAttachments = @.uploadingAttachments.filter (uploading) ->
-                        return uploading.name != file.get('name')
+                        return uploading != file
 
                     attachment = Immutable.Map()
-
                     attachment = attachment.merge({
-                        file: file,
+                        file: uploadedFile,
                         editable: editable,
                         loading: false,
                         from_comment: comment
                     })
 
                     @._attachments = @._attachments.push(attachment)
-
                     @.regenerate()
-
                     @rootScope.$broadcast("attachment:create")
-
                     resolve(attachment)
             else
                 reject(new Error(file))
+
+        return promise
 
     loadAttachments: (type, objId, projectId)->
         @attachmentsService.list(type, objId, projectId).then (files) =>

@@ -25,6 +25,21 @@ section.attachments.attachment-simple(tg-attachments-drop="vm.addAttachments(fil
                 ng-model="files"
                 tg-file-change="vm.addAttachments(files)"
             )
+            button.btn-icon.add-attachment-button(
+                type="button"
+                variant='primary'
+                ng-click="displayCameraInput()"
+            )
+                tg-svg(svg-icon="icon-camera")
+            input(
+                aria-label="{{'ATTACHMENT.ADD' | translate}}"
+                id="add-attach-camera"
+                type="file"
+                accept="image/*"
+                capture="environment"
+                ng-model="files"
+                tg-file-change="vm.addAttachments(files)"
+            )
     .attachments-empty(ng-if="!vm.attachments.size")
         div {{'ATTACHMENT.DROP' | translate}}
     .attachment-body.attachment-list

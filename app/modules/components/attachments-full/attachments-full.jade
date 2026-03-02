@@ -46,6 +46,22 @@ section.attachments.attachment-full(
                     tg-file-change="vm.addAttachments(files, true)"
                 )
 
+                button.btn-icon.add-attachment-button(
+                    type="button"
+                    variant="primary"
+                    ng-click="displayCameraInput()"
+                )
+                    tg-svg(svg-icon="icon-camera")
+
+                input(
+                    id="add-attach-camera",
+                    type="file",
+                    accept="image/*",
+                    capture="environment"
+                    ng-model="files",
+                    tg-file-change="vm.addAttachments(files, true)"
+                )
+
     .attachments-empty(ng-if="!vm.attachments.size && !vm.uploadingAttachments().length")
         div {{'ATTACHMENT.DROP' | translate}}
     .attachment-list.sortable(ng-if="vm.mode == 'list'")
