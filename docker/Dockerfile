@@ -18,10 +18,10 @@ RUN set -eux; \
     apk add \
        bash; \
     # Install taiga-front core
-    wget https://github.com/taigaio/taiga-front-dist/archive/6.9.0.zip -O source.zip; \
+    wget https://github.com/cygniagrociencia/taiga-front-dist/archive/refs/tags/cygni.zip -O source.zip; \
     unzip source.zip; \
-    mv /taiga-front-dist-6.9.0 /taiga; \
-    mv /conf.json.template taiga/dist/; \
+    mv taiga-front-dist-cygni /taiga; \
+    mv /conf.json.template /taiga/dist/; \
     chmod +x /docker-entrypoint.d/30_config_env_subst.sh; \
     # Install taiga-front contribs
     mkdir /taiga/dist/plugins; \
