@@ -1,53 +1,58 @@
 name: Build and publish dist
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    workflow_run:
+        workflows: ["CI"]
+        types:
+            - completed
+        branches:
+            - main
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
 
-    steps:
-      - name: Checkout taiga-front
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout taiga-front
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: ".nvmrc"
 
-      - name: Install dependencies and build
-        run: |
-          npm ci
-          npx gulp deploy
+            - name: Install dependencies and build
+              run: |
+                  npm ci
+                  npx gulp deploy
 
-      - name: Checkout taiga-front-dist
-        uses: actions/checkout@v4
-        with:
-          repository: cygniagrociencia/taiga-front-dist
-          token: ${{ secrets.DIST_REPO_TOKEN }}
-          path: taiga-front-dist
+            - name: Checkout taiga-front-dist
+              uses: actions/checkout@v4
+              with:
+                  repository: cygniagrociencia/taiga-front-dist
+                  token: ${{ secrets.DIST_REPO_TOKEN }}
+                  path: taiga-front-dist
 
-      - name: Copy dist
-        run: |
-          rm -rf taiga-front-dist/dist
-          cp -r dist/ taiga-front-dist/dist
+            - name: Copy dist
+              run: |
+                  rm -rf taiga-front-dist/dist
+                  cp -r dist/ taiga-front-dist/dist
 
-      - name: Commit and push to taiga-front-dist
-        run: |
-          cd taiga-front-dist
+            - name: Commit and push to taiga-front-dist
+              run: |
+                  cd taiga-front-dist
 
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git config user.name  "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          COMMIT_ID=$(git -C .. rev-parse HEAD)
+                  COMMIT_ID=$(git -C .. rev-parse --short HEAD)
+                  DATE=$(date +'%Y-%m-%d %H:%M')
 
-          git add -A
-          git commit -m "build: $COMMIT_ID" || echo "Nothing to commit"
+                  git add -A
+                  git commit -m "build: $COMMIT_ID ($DATE)" || echo "Nothing to commit"
 
-          git tag -f cygni
-          git push origin HEAD --force
-          git push origin cygni --force --tags
+                  git tag -f cygni
+                  git push origin HEAD --force
+                  git push origin cygni --force --tags
