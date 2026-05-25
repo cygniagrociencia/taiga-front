@@ -52,6 +52,12 @@ NavigationBarDirective = (currentUserService, navigationBarService, locationServ
         scope.vm.sendFeedback = () ->
             feedbackService.sendFeedback()
 
+        scope.vm.toggleMobileMenu = () ->
+            document.body.classList.toggle('mobile-menu-open')
+
+        scope.$on "$routeChangeStart", () ->
+            document.body.classList.remove('mobile-menu-open')
+
         window._taigaSendFeedback = scope.vm.sendFeedback
 
         scope.$on "$routeChangeSuccess", () ->
