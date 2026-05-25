@@ -1,5 +1,11 @@
 .issues-table {
     margin-bottom: 2rem;
+    @include until($tablet) {
+        overflow-x: auto;
+        .row {
+            min-width: 720px;
+        }
+    }
 
     .tooltip {
         @include tooltip(
