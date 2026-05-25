@@ -138,3 +138,33 @@
         width: 185px;
     }
 }
+
+@include until($tablet) {
+    .taskboard {
+        height: auto;
+        overflow: visible;
+    }
+    .taskboard-inner {
+        overflow: visible;
+    }
+    .taskboard-manager {
+        display: block;
+        height: auto;
+        overflow-x: auto;
+        &.expanded {
+            display: block;
+        }
+    }
+    .taskboard-header {
+        padding: 0 0 .75rem 0;
+    }
+    .taskboard-table-options-start {
+        flex-wrap: wrap;
+        gap: .25rem;
+        width: 100%;
+        tg-input-search {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
