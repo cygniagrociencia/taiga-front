@@ -45,6 +45,11 @@
     flex-basis: 300px;
     max-width: 300px;
     padding: 1rem;
+    @include until($tablet) {
+        flex-basis: auto;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .ticket-data-container {
@@ -275,6 +280,14 @@
     }
     .users-action.icon {
         margin-right: .5rem;
+    }
+    @include until($tablet) {
+        flex-direction: column;
+        gap: .25rem;
+        margin: .5rem 0 0;
+        .ticket-users-action {
+            margin: 0;
+        }
     }
 }
 
