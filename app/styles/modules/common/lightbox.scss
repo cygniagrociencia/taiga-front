@@ -12,7 +12,7 @@
         &.open {
             align-items: flex-start;
             overflow-y: auto;
-            padding: 1rem .5rem;
+            padding: 3.5rem .5rem 1rem;
         }
     }
 }
@@ -178,6 +178,13 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     textarea {
         max-height: 12rem;
@@ -259,6 +266,13 @@
         flex-basis: 600px;
         flex-grow: 0;
         max-width: 600px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     fieldset {
         margin-bottom: 1rem;
@@ -269,6 +283,13 @@
         flex-basis: 600px;
         flex-flow: 0;
         max-width: 600px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     .last-sprint-name {
         @include font-size(small);
@@ -327,6 +348,9 @@
         flex-basis: 420px;
         flex-flow: 0;
         max-width: 420px;
+        @include until($tablet) {
+            margin: auto 0;
+        }
     }
     .subtitle,
     .message {
@@ -352,6 +376,9 @@
         flex-basis: 420px;
         flex-flow: 0;
         max-width: 420px;
+        @include until($tablet) {
+            margin: auto 0;
+        }
     }
     .subtitle,
     .message {
@@ -382,6 +409,9 @@
     form {
         flex-basis: 420px;
         flex-grow: 0;
+        @include until($tablet) {
+            margin: auto 0;
+        }
     }
     .question,
     .subtitle {
@@ -586,6 +616,13 @@
         flex-basis: 420px;
         flex-grow: 0;
         width: 420px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     textarea {
         margin-bottom: 1rem;
@@ -602,6 +639,13 @@
         flex-basis: 600px;
         flex-grow: 0;
         width: 600px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     .search {
         margin-top: 2rem;
@@ -729,6 +773,13 @@
         flex-basis: 600px;
         flex-flow: 0;
         max-width: 600px;
+        @include until($tablet) {
+            box-sizing: border-box;
+            flex-basis: auto;
+            margin: auto 0;
+            max-width: 100%;
+            width: 100%;
+        }
     }
     .date {
         margin: 2rem 0 1rem;
@@ -821,6 +872,10 @@
         display: flex;
         margin-bottom: $spacing;
         width: $width;
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
         .sidebar {
             background: none;
             flex-basis: $sidebar-width;
@@ -1187,6 +1242,13 @@
     .lightbox-create-related-epic-wrapper {
         max-width: 600px;
         width: 90%;
+        @include until($tablet) {
+            box-sizing: border-box;
+            margin: auto 0;
+            max-width: 100%;
+            padding: 0 .25rem;
+            width: 100%;
+        }
     }
     .related-with-selector {
         display: flex;

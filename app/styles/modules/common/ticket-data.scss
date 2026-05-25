@@ -42,6 +42,8 @@
 
 .ticket-data {
     background: $grey-02;
+    box-sizing: border-box;
+    display: block;
     flex-basis: 300px;
     max-width: 300px;
     padding: 1rem;
