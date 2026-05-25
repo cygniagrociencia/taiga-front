@@ -1,3 +1,12 @@
+fieldset:has(tg-attachments-simple) {
+    min-width: 0;
+}
+
+tg-attachments-simple {
+    display: block;
+    min-width: 0;
+}
+
 .attachment-simple {
     &.attachment-dragover {
         .attachments-empty {
@@ -9,7 +18,13 @@
     .attachment-name {
         flex-basis: 70%;
         flex-grow: 0;
+        min-width: 0;
         width: 70%;
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
     .single-attachment {
         padding: .5rem 0 .5rem .5rem;
