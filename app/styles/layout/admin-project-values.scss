@@ -66,6 +66,18 @@
     margin-block-end: 1.5rem;
     margin-block-start: 1.5rem;
     padding-inline-start: 1rem;
+    @include until($tablet) {
+        padding-inline-start: 0;
+        .admin-swimlanes-form,
+        .admin-swimlane-form,
+        .admin-swimlanes-list {
+            max-width: 100%;
+            width: 100%;
+        }
+        input {
+            min-width: 0;
+        }
+    }
 
     .empty {
         @include font-type(regular);
@@ -229,6 +241,11 @@
     margin-block-start: 1.5rem;
     margin-inline-start: 1rem;
     width: 500px;
+    @include until($tablet) {
+        margin-inline-start: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 
     .admin-swimlane-title {
         align-items: center;
