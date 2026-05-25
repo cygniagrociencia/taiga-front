@@ -258,4 +258,48 @@
             margin-left: .5rem;
         }
     }
+    @include until($tablet) {
+        .row {
+            flex-wrap: wrap;
+            padding: .5rem;
+            .task-name {
+                flex: 1 1 100%;
+                margin-bottom: .5rem;
+                margin-right: 0;
+                order: 1;
+                input {
+                    margin-right: 0;
+                    width: 100%;
+                }
+            }
+            .status {
+                flex: 1 1 auto;
+                margin-right: .5rem;
+                min-width: 0;
+                order: 2;
+                width: auto;
+            }
+            .assigned-to {
+                flex: 1 1 auto;
+                min-width: 0;
+                order: 3;
+                width: auto;
+            }
+            .task-settings {
+                opacity: 1;
+                order: 4;
+                width: auto;
+            }
+        }
+        .task-assignedto {
+            figcaption {
+                max-width: none;
+            }
+        }
+        .related-task-create-form {
+            &.active {
+                padding: .5rem;
+            }
+        }
+    }
 }

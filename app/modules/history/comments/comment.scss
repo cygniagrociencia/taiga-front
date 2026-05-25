@@ -163,6 +163,52 @@
     }
     .deleted-comment-comment {
         margin-top: 1rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+    @include until($tablet) {
+        .comment-wrapper {
+            padding: 1rem 0;
+        }
+        .comment-avatar {
+            margin-right: .75rem;
+            width: 40px;
+        }
+        .comment-main {
+            flex-direction: column;
+        }
+        .comment-data {
+            flex-wrap: wrap;
+            margin-bottom: .5rem;
+        }
+        .comment-edited {
+            margin: .25rem 0;
+        }
+        .comment-options {
+            align-self: flex-end;
+            flex-basis: auto;
+            margin-left: 0;
+            margin-top: .5rem;
+            .comment-option {
+                opacity: 1;
+            }
+        }
+        .deleted-comment-main {
+            align-items: center;
+            flex-direction: column;
+            gap: .25rem;
+            text-align: center;
+        }
+        .toggle-deleted-comment {
+            margin: 0;
+        }
+        .restore-comment {
+            margin-left: 0;
+        }
     }
 }
 
