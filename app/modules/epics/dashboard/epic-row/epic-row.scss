@@ -139,6 +139,15 @@
         );
         display: block;
         text-align: left;
+        @include until($tablet) {
+            left: auto !important; /* stylelint-disable-line declaration-no-important */
+            max-width: calc(100vw - 1rem);
+            position: fixed !important; /* stylelint-disable-line declaration-no-important */
+            right: .5rem !important; /* stylelint-disable-line declaration-no-important */
+            top: calc(#{$navbar} + .5rem) !important; /* stylelint-disable-line declaration-no-important */
+            width: 220px;
+            z-index: $lightbox-layer;
+        }
     }
     .loading-spinner {
         height: 10px;
