@@ -35,14 +35,6 @@
             background: lighten(rgba($primary-light, .2), 30%);
             cursor: move;
             transition: background .2s ease-in;
-            .icon {
-                opacity: 1;
-                transition: opacity .2s ease-in;
-            }
-            .options-column {
-                opacity: 1;
-                transition: opacity .3s linear;
-            }
         }
         &.no-draggable {
             padding-left: 50px;
@@ -111,7 +103,6 @@
         .options-column {
             max-width: 60px;
             min-width: 100px;
-            opacity: 0;
             text-align: right;
         }
         .is-archived-column {
@@ -197,7 +188,6 @@
         cursor: pointer;
         fill: $gray-light;
         margin-right: 1rem;
-        opacity: 0;
         &:hover {
             fill: $primary-light;
             transition: all .2s ease-in;
@@ -230,6 +220,18 @@
     .gu-transit {
         * {
             visibility: hidden;
+        }
+    }
+    @include until($tablet) {
+        overflow-x: auto;
+        .row {
+            width: max-content;
+        }
+        > .project-values-title {
+            background: $color-gray400;
+            left: 0;
+            position: sticky;
+            z-index: $first-layer;
         }
     }
 }
