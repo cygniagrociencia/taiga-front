@@ -880,9 +880,7 @@
             background: none;
             flex-basis: $sidebar-width;
             flex-shrink: 0;
-            margin-left: $spacing;
             min-width: $sidebar-width;
-            padding-left: $spacing;
             width: $sidebar-width;
         }
         @include until($tablet) {
@@ -890,9 +888,7 @@
             width: 100%;
             .sidebar {
                 flex-basis: auto;
-                margin-left: 0;
                 min-width: 0;
-                padding-left: 0;
                 width: 100%;
             }
         }
@@ -1110,9 +1106,6 @@
             padding-top: .5rem;
             text-align: center;
         }
-    }
-    .ticket-data {
-        padding-top: 0;
     }
 
     .ticket-data-container {
