@@ -3,6 +3,9 @@
         form {
             margin: 0 8rem;
             position: relative;
+            @include until($tablet) {
+                margin: 0 .5rem;
+            }
         }
         .search-button {
             left: 1rem;
@@ -12,6 +15,9 @@
             input {
                 padding-left: 3.5rem;
                 padding-right: 23rem;
+                @include until($tablet) {
+                    padding-right: 1rem;
+                }
             }
         }
     }
@@ -38,6 +44,17 @@
             &:hover {
                 background: $grey-10;
                 color: $gray;
+            }
+        }
+        @include until($tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .25rem;
+            justify-content: center;
+            margin-top: .75rem;
+            position: static;
+            label {
+                padding: .25rem .5rem;
             }
         }
     }
@@ -105,11 +122,28 @@
         display: block;
         margin: 0 20rem;
         transition: inherit;
+        @include until($tablet) {
+            margin: 0;
+        }
     }
     div[tg-loading] {
         img {
             display: block;
             margin: 0 auto;
+        }
+    }
+
+    @include until($tablet) {
+        .list-itemtype-project {
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .list-itemtype-project-left {
+            flex-wrap: nowrap;
+        }
+        .project-statistics {
+            flex-basis: auto;
+            justify-content: flex-start;
         }
     }
 }
