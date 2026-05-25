@@ -506,3 +506,71 @@
         display: none;
     }
 }
+
+@include until($tablet) {
+    .backlog-table-header {
+        display: none;
+    }
+    .backlog-table-body {
+        .row {
+            align-items: stretch;
+            background-color: $color-gray100;
+            border: 1px solid $color-gray200;
+            border-radius: 4px;
+            cursor: default;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: .35rem;
+            margin-bottom: .5rem;
+            padding: .75rem;
+            position: relative;
+        }
+        .draggable-us-row {
+            display: none;
+        }
+        .user-story-main-data {
+            margin-top: 0;
+            width: 100%;
+        }
+        .user-stories {
+            row-gap: .25rem;
+        }
+        .row > .status,
+        .row .points {
+            align-items: center;
+            display: flex !important; /* stylelint-disable-line declaration-no-important */
+            flex-basis: auto !important; /* stylelint-disable-line declaration-no-important */
+            gap: .5rem;
+            justify-content: flex-start !important; /* stylelint-disable-line declaration-no-important */
+            max-width: none !important; /* stylelint-disable-line declaration-no-important */
+            text-align: left;
+            width: auto !important; /* stylelint-disable-line declaration-no-important */
+        }
+        .row .points {
+            margin-left: 0 !important; /* stylelint-disable-line declaration-no-important */
+            .inner {
+                justify-content: flex-start;
+                margin-left: 0;
+            }
+        }
+        .field-label {
+            color: $color-link-tertiary;
+            display: block;
+            font-size: .7rem;
+            text-transform: uppercase;
+        }
+        .us-option {
+            margin-left: auto;
+            position: absolute;
+            right: .5rem;
+            top: .5rem;
+        }
+        .us-status {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.field-label {
+    display: none;
+}

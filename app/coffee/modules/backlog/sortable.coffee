@@ -41,6 +41,9 @@ BacklogSortableDirective = () ->
                 copy: false,
                 isContainer: (el) -> return el.classList.contains('sprint-table'),
                 moves: (item) ->
+                    if window.innerWidth < 769
+                        return false
+
                     if !$(item).hasClass('row')
                         return false
 
