@@ -176,8 +176,10 @@
         }
 
         .admin-swimlane-item-drag {
+            cursor: grab;
             fill: $color-link-primary;
             margin-inline-end: 1rem;
+            touch-action: none;
         }
 
         .delete-swimlane {
@@ -200,9 +202,6 @@
             }
         }
 
-        &:hover {
-            cursor: grab;
-        }
     }
 
     .btn-default-swimlane {
