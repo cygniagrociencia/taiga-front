@@ -115,6 +115,7 @@
     }
     @include until($tablet) {
         .activity-item {
+            padding-top: 2rem;
             blockquote {
                 margin-left: 0;
             }
@@ -124,6 +125,10 @@
             .activity-info {
                 flex-wrap: wrap;
                 margin-right: 0;
+            }
+            .activity-date {
+                right: .5rem;
+                top: .5rem;
             }
         }
         .activity-member-view {
