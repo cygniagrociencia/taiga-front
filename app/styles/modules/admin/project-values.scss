@@ -33,8 +33,12 @@
     .project-values-row {
         &:hover {
             background: lighten($primary, 60%);
-            cursor: move;
             transition: background .2s ease-in;
+        }
+        .icon-draggable,
+        tg-svg[svg-icon='icon-draggable'] {
+            cursor: move;
+            touch-action: none;
         }
     }
 }

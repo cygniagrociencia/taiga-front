@@ -18,8 +18,15 @@ RelatedUserstoriesSortableDirective = ($parse, projectService) ->
             copySortSource: false
             copy: false
             mirrorContainer: el[0]
-            moves: (item) ->
-                return $(item).is('tg-related-userstory-row')
+            moves: (item, container, handle) ->
+                return false if not $(item).is('tg-related-userstory-row')
+                node = handle
+                while node and node != container
+                    cls = node.getAttribute?('class') or ''
+                    if cls.indexOf('icon-drag') >= 0
+                        return true
+                    node = node.parentNode
+                return false
         })
 
         drake.on 'dragend', (item) ->

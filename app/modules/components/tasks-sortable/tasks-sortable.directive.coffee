@@ -16,8 +16,9 @@ TasksSortableDirective = ($parse, projectService) ->
             copySortSource: false
             copy: false
             mirrorContainer: el[0]
-            moves: (item) ->
-                return $(item).is('div.single-related-task.js-related-task')
+            moves: (item, container, handle) ->
+                return false if not $(item).is('div.single-related-task.js-related-task')
+                return $(handle).closest('.task-reorder').length > 0
         })
 
         drake.on 'dragend', (item) ->

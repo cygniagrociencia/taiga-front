@@ -344,6 +344,16 @@ SortableSwimlanes = () ->
             copySortSource: false,
             copy: false,
             mirrorContainer: tdom[0],
+            moves: (item, container, handle) ->
+                node = handle
+                while node and node != container
+                    if node.getAttribute?('svg-icon') == 'icon-draggable'
+                        return true
+                    cls = node.getAttribute?('class') or ''
+                    if cls.indexOf('icon-draggable') >= 0
+                        return true
+                    node = node.parentNode
+                return false
         })
 
         drake.on 'dragend', (item) ->
@@ -421,6 +431,16 @@ ProjectValuesDirective = ($log, $repo, $confirm, $location, animationFrame, $tra
             copySortSource: false,
             copy: false,
             mirrorContainer: tdom[0],
+            moves: (item, container, handle) ->
+                node = handle
+                while node and node != container
+                    if node.getAttribute?('svg-icon') == 'icon-draggable'
+                        return true
+                    cls = node.getAttribute?('class') or ''
+                    if cls.indexOf('icon-draggable') >= 0
+                        return true
+                    node = node.parentNode
+                return false
         })
 
         drake.on 'dragend', (item) ->

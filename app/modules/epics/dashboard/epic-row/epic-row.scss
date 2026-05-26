@@ -6,7 +6,6 @@
     align-items: center;
     background: $color-gray100;
     border-radius: 3px;
-    cursor: move;
     display: flex;
     margin-bottom: .5rem;
     padding-left: 1rem;
@@ -15,9 +14,6 @@
     &.unfold,
     &:hover {
         background-color: $color-gray200;
-        .icon-drag {
-            opacity: 1;
-        }
     }
     &.not-empty {
         cursor: pointer;
@@ -69,9 +65,8 @@
         cursor: move;
         fill: $color-link-primary;
         left: .5rem;
-        opacity: 0;
         position: absolute;
-        transition: opacity .1s;
+        touch-action: none;
     }
     .epic-pill {
         @include font-type(regular);

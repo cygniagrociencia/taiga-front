@@ -33,14 +33,15 @@
         }
         &:hover {
             background: lighten(rgba($primary-light, .2), 30%);
-            cursor: move;
             transition: background .2s ease-in;
         }
         &.no-draggable {
             padding-left: 50px;
-            &:hover {
-                cursor: auto;
-            }
+        }
+        .icon-draggable,
+        tg-svg[svg-icon='icon-draggable'] {
+            cursor: move;
+            touch-action: none;
         }
         &.new-value {
             padding-left: 3rem;
