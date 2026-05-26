@@ -205,9 +205,18 @@
         }
         .toggle-deleted-comment {
             margin: 0;
+            text-align: center;
+            .icon-arrow-down,
+            .icon-arrow-up {
+                margin-left: 0;
+            }
         }
         .restore-comment {
             margin-left: 0;
+            text-align: center;
+            .icon-reload {
+                margin-right: 0;
+            }
         }
     }
 }
