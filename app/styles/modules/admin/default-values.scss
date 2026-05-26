@@ -15,4 +15,14 @@
         display: block;
         text-align: center;
     }
+    @include until($tablet) {
+        label,
+        select {
+            display: block;
+            width: 100%;
+        }
+        label {
+            margin-bottom: .25rem;
+        }
+    }
 }

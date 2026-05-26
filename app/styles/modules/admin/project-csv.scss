@@ -45,4 +45,14 @@
             margin: 0;
         }
     }
+    @include until($tablet) {
+        .csv-regenerate-field {
+            align-items: stretch;
+            flex-direction: column;
+            gap: .5rem;
+            a {
+                margin-left: 0;
+            }
+        }
+    }
 }

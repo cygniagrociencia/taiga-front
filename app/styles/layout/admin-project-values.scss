@@ -59,6 +59,11 @@
             text-transform: none;
         }
     }
+    @include until($tablet) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .5rem;
+    }
 }
 
 .admin-swimlanes-manager {
