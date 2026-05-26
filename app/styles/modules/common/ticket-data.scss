@@ -125,6 +125,12 @@
     .priority-data {
         @include category-choices;
     }
+    .clickable .level-data .icon-chevron-down {
+        fill: $color-link-tertiary;
+        height: .75rem;
+        margin-inline-start: .5rem;
+        width: .75rem;
+    }
 }
 
 .ticket-section-label {
