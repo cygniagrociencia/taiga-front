@@ -80,9 +80,17 @@ tg-attachments-simple {
     }
     .attachment-name {
         flex-grow: 1;
-        flex-shrink: 0;
+        flex-shrink: 1;
+        min-width: 0;
         padding-right: 1rem;
+        a {
+            align-items: center;
+            display: flex;
+            min-width: 0;
+            overflow: hidden;
+        }
         span {
+            min-width: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
