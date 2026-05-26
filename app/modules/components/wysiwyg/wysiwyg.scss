@@ -28,6 +28,24 @@ tg-wysiwyg {
             display: flex;
         }
     }
+    .tg-wysiwyg-camera {
+        align-items: center;
+        background-color: $color-solid-primary;
+        border: 0;
+        border-radius: 3px;
+        color: $color-black900;
+        cursor: pointer;
+        display: none;
+        justify-content: center;
+        padding: .45rem .75rem;
+
+        @include until($tablet) {
+            display: flex;
+        }
+    }
+    .tg-wysiwyg-camera-input {
+        display: none;
+    }
     .mode-editor {
         margin-top: .25rem;
         span {

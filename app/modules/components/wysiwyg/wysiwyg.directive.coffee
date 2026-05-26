@@ -223,6 +223,29 @@ Wysiwyg = ($translate, $confirm, $storage, wysiwygService, animationFrame, tgLoa
         discardLocalStorage = () ->
             $storage.remove($scope.storageKey)
 
+        $scope.openCamera = (e) ->
+            e.preventDefault() if e
+            input = $el[0].querySelector('.tg-wysiwyg-camera-input')
+            input.click() if input
+
+        $scope.onCameraFile = (files) ->
+            file = files && files[0]
+            return if !file
+            cb = (result) =>
+                url = result && result.default
+                return if !url
+                currentMarkdown = $scope.markdown || ''
+                trailing = if currentMarkdown.length && currentMarkdown.charAt(currentMarkdown.length - 1) != '\n' then '\n\n' else ''
+                newMarkdown = currentMarkdown + trailing + "![](#{url})"
+                $scope.$evalAsync () =>
+                    $scope.markdown = newMarkdown
+                    $scope.setEditMode(true) if !$scope.editMode
+                    setHtmlEditor(newMarkdown)
+                    throttleChange()
+            $scope.onUploadFile(file, cb)
+            input = $el[0].querySelector('.tg-wysiwyg-camera-input')
+            input.value = '' if input
+
         $scope.cancelWithConfirmation = () ->
             if $scope.content == $scope.markdown
                 $scope.cancel()
