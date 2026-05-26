@@ -18,15 +18,7 @@ EpicsSortableDirective = ($parse, projectService) ->
             mirrorContainer: el[0]
             moves: (item, container, handle) ->
                 return false if not $(item).is('div.epics-table-body-row')
-                node = handle
-                while node and node != container
-                    if node.getAttribute?('svg-icon') == 'icon-draggable'
-                        return true
-                    cls = node.getAttribute?('class') or ''
-                    if cls.indexOf('icon-draggable') >= 0
-                        return true
-                    node = node.parentNode
-                return false
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->

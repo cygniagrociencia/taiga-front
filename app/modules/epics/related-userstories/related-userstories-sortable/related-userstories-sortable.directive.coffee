@@ -20,13 +20,7 @@ RelatedUserstoriesSortableDirective = ($parse, projectService) ->
             mirrorContainer: el[0]
             moves: (item, container, handle) ->
                 return false if not $(item).is('tg-related-userstory-row')
-                node = handle
-                while node and node != container
-                    cls = node.getAttribute?('class') or ''
-                    if cls.indexOf('icon-drag') >= 0
-                        return true
-                    node = node.parentNode
-                return false
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->
