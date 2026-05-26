@@ -30,7 +30,6 @@
                     tabindex="0"
                 )
     .user-stories.user-story-main-data
-        span.field-label(translate="BACKLOG.TABLE.COLUMN_US")
         a.user-story-link(
             href=""
             tg-nav="project-userstories-detail:project=project.slug,ref=us.ref"
@@ -59,7 +58,6 @@
         )
 
     .status(tg-us-status="us" on-update="ctrl.updateUserStoryStatus()")
-        span.field-label(translate="COMMON.FIELDS.STATUS")
         a.us-status(href="", title="{{'BACKLOG.STATUS_NAME' | translate}}")
             span.us-status-bind
             tg-svg(
@@ -67,7 +65,6 @@
                 svg-icon="icon-arrow-down"
             )
 
-    span.field-label.points-label(translate="COMMON.FIELDS.POINTS")
     div.points(tg-backlog-us-points="us")
 
     .us-option(tg-us-edit-selector, tg-check-permission="modify_us")
