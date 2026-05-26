@@ -141,8 +141,9 @@ tg-attachments-simple {
                 fill: $color-link-red;
             }
         }
-        .icon-drag {
+        a.settings:has(.icon-draggable) {
             cursor: move;
+            touch-action: none;
         }
     }
     .editable-attachment-deprecated {
@@ -170,6 +171,43 @@ tg-attachments-simple {
         &::-webkit-progress-bar,
         &::-moz-progress-bar {
             background: $color-link-primary;
+        }
+    }
+
+    @include until($tablet) {
+        .single-attachment {
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: .75rem .5rem;
+            row-gap: .25rem;
+        }
+        .attachment-name {
+            flex-basis: 100%;
+            padding-right: 0;
+        }
+        .attachment-comments,
+        .editable-attachment-comment {
+            flex: 1 1 100%;
+            margin-right: 0;
+            order: 3;
+            span {
+                overflow-wrap: anywhere;
+                white-space: normal;
+            }
+        }
+        .attachment-size {
+            flex-basis: auto;
+            flex-grow: 1;
+            order: 2;
+            text-align: left;
+        }
+        .attachment-settings {
+            flex-basis: auto;
+            order: 2;
+            .settings {
+                opacity: 1;
+                padding: .25rem;
+            }
         }
     }
 }
