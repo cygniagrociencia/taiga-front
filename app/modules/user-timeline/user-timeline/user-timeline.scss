@@ -113,4 +113,21 @@
             max-width: 3rem;
         }
     }
+    @include until($tablet) {
+        .activity-item {
+            blockquote {
+                margin-left: 0;
+            }
+            img {
+                max-width: 100%;
+            }
+            .activity-info {
+                flex-wrap: wrap;
+                margin-right: 0;
+            }
+        }
+        .activity-member-view {
+            margin-left: 0;
+        }
+    }
 }
