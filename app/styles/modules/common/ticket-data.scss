@@ -256,20 +256,27 @@
 
 .ticket-users-actions {
     display: flex;
-    margin: .5rem -.25rem 0;
+    flex-wrap: wrap;
+    gap: .25rem;
+    margin: .5rem 0 0;
     .ticket-users-action {
+        align-items: center;
         background: $white;
         color: $gray;
         cursor: pointer;
         display: flex;
-        flex-grow: 1;
+        flex: 1 1 100%;
         font-size: .9rem;
         justify-content: center;
-        line-height: 2rem;
-        margin: 0 .25rem;
+        line-height: 1.2;
+        min-width: 0;
+        padding: .5rem .25rem;
         text-align: center;
+        white-space: normal;
+        word-break: break-word;
         svg {
             fill: $gray;
+            flex-shrink: 0;
             height: .75rem;
             width: .75rem;
         }
@@ -282,14 +289,6 @@
     }
     .users-action.icon {
         margin-right: .5rem;
-    }
-    @include until($tablet) {
-        flex-direction: column;
-        gap: .25rem;
-        margin: .5rem 0 0;
-        .ticket-users-action {
-            margin: 0;
-        }
     }
 }
 
