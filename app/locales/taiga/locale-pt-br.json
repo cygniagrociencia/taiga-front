@@ -211,12 +211,12 @@
             "COUNTER_TITLE": "{total, plural, =1{um voto} other{# votos}}"
         },
         "PROMOTE_TO_US": "Promova para a história do usuário",
-        "PROMOTED_ISSUES": "Esta issue foi promovida para",
+        "PROMOTED_ISSUES": "Este problema foi promovido para",
         "PROMOTED_TASKS": "Este task foi promovido para",
         "CONFIRM_PROMOTE": {
             "ISSUE": {
                 "TITLE": "Promover esse problema para nova história de usuário",
-                "MESSAGE": "Tem certeza de que deseja criar uma nova história de usuário a partir desta issue?"
+                "MESSAGE": "Tem certeza de que deseja criar uma nova história de usuário a partir deste problema?"
             },
             "TASK": {
                 "TITLE": "Promover esta tarefa para uma nova história de usuário",
@@ -644,7 +644,7 @@
         },
         "PROJECT_VALUES_STATUS": {
             "TITLE": "Status",
-            "SUBTITLE": "Adicione, remova ou edite a cor e o nome dos status pelos quais suas épicas, histórias de usuário, tarefas e issues passarão.",
+            "SUBTITLE": "Adicione, remova ou edite a cor e o nome dos status pelos quais suas épicas, histórias de usuário, tarefas e problemas passarão.",
             "EPIC_TITLE": "Estados do Épico",
             "US_TITLE": "Status de história de usuário",
             "TASK_TITLE": "Estados da Tarefa",
@@ -669,11 +669,11 @@
         },
         "PROJECT_DUE_DATE_STATUS": {
             "TITLE": "Datas de vencimento",
-            "SUBTITLE": "Especifique os status de data de vencimento pelos quais suas histórias de usuário, tarefas e issues passarão se selecionados",
+            "SUBTITLE": "Especifique os status de data de vencimento pelos quais suas histórias de usuário, tarefas e problemas passarão se selecionados",
             "US_TITLE": "Status de data de vencimento da história de usuário",
             "ACTION_ADD_STATUS": "Adicionar novo status",
             "TASK_TITLE": "Status de data de vencimento da tarefa",
-            "ISSUE_TITLE": "Status de data de vencimento da issue",
+            "ISSUE_TITLE": "Status de data de vencimento do problema",
             "DAYS_TO_DUE_DATE": "Dias para o vencimento",
             "BEFORE_AFTER": "Antes/depois",
             "BEFORE": "Antes",
@@ -1200,20 +1200,20 @@
         },
         "CREATE_EDIT": {
             "TASK_PLACEHOLDER_DESCRIPTION": "Por favor adicione um texto descritivo que ajude os outros a compreender melhor esta tarefa",
-            "ISSUE_PLACEHOLDER_DESCRIPTION": "Adicione um texto descritivo para ajudar os outros a entenderem melhor esta issue",
+            "ISSUE_PLACEHOLDER_DESCRIPTION": "Adicione um texto descritivo para ajudar os outros a entenderem melhor este problema",
             "US_PLACEHOLDER_DESCRIPTION": "Adicione um texto descritivo para ajudar os outros a entenderem melhor esta história de usuário",
             "NEW_TASK": "Nova tarefa",
-            "NEW_ISSUE": "Nova issue",
+            "NEW_ISSUE": "Novo problema",
             "NEW_US": "Nova história de usuário",
             "EDIT_TASK": "Editar tarefa",
-            "EDIT_ISSUE": "Editar issue",
+            "EDIT_ISSUE": "Editar problema",
             "EDIT_US": "Editar história de usuário",
-            "ADD_EXISTING_ISSUE": "Adicionar issue a {{ targetName }}",
+            "ADD_EXISTING_ISSUE": "Adicionar problema a {{ targetName }}",
             "CONFIRM_CLOSE": "Você não salvou as alterações.\nTem certeza que deseja fechar o formulário?",
-            "EXISTING_ISSUE": "Issue existente",
-            "CHOOSE_EXISTING_ISSUE": "Qual issue?",
+            "EXISTING_ISSUE": "Problema existente",
+            "CHOOSE_EXISTING_ISSUE": "Qual problema?",
             "ADD_ISSUE": "Adicionar problema",
-            "FILTER_ISSUES": "Filtrar issues",
+            "FILTER_ISSUES": "Filtrar problemas",
             "SWIMLANE": "Swimlane",
             "SELECT_SWIMLANE": "Selecionar swimlane",
             "SELECT_STATUS": "Selecionar status",
@@ -1334,7 +1334,7 @@
         "TOTAL_POINTS": "total de pontos",
         "ADD": "história de usuário",
         "ADD_BULK": "Adicione novas histórias de usuário em massa",
-        "PROMOTED_FROM_ISSUE": "Esta história de usuário foi promovida a partir da issue:",
+        "PROMOTED_FROM_ISSUE": "Esta história de usuário foi promovida a partir do problema:",
         "PROMOTED_FROM_TASK": "Esta história de usuário foi promovida a partir da tarefa:",
         "CONVERTED_FROM_TASK": "Esta história de usuário era originalmente uma tarefa.",
         "TITLE_LINK_GO_TO_ISSUE": "Adicionar comentários aos apontamentos",
@@ -1512,8 +1512,8 @@
         "SECTION_NAME": "Quadro de Tarefas",
         "TITLE_ACTION_ADD": "Adicionar uma nova tarefa",
         "TITLE_ACTION_ADD_BULK": "Adicionar novas tarefas em massa",
-        "TITLE_ACTION_ADD_ISSUE": "Adicionar uma nova issue",
-        "TITLE_ACTION_ADD_ISSUE_BULK": "Adicionar novas issues em massa",
+        "TITLE_ACTION_ADD_ISSUE": "Adicionar um novo problema",
+        "TITLE_ACTION_ADD_ISSUE_BULK": "Adicionar novos problemas em massa",
         "TITLE_ACTION_ASSIGN": "Assinalar tarefa",
         "PLACEHOLDER_CARD_TITLE": "Isto poderia ser uma história de usuário",
         "PLACEHOLDER_CARD_TEXT": "Vá para o <a href=\"{{ backlogUrl }}\" title=\"Ir para o backlog\">backlog</a> e arraste histórias de usuário para esta sprint; divida as histórias em tarefas para acompanhá-las separadamente.",
@@ -1528,7 +1528,7 @@
             "TITLE_ACTION_UNFOLD_ROW": "Abrir linha",
             "FIELD_POINTS": "pontos",
             "ROW_STORYLESS_TASKS_TITLE": "Tarefas sem história",
-            "ROW_ISSUES_TITLE": "Issues da sprint"
+            "ROW_ISSUES_TITLE": "Problemas da sprint"
         },
         "CHARTS": {
             "XAXIS_LABEL": "Dias",
@@ -1547,9 +1547,9 @@
             "SELECT_DESTINATION_PLACEHOLDER": "Selecionar destino",
             "UNFINISHED_USER_STORIES_COUNT": "{total, plural, =1{<strong>#</strong> história de usuário inacabada} other{<strong>#</strong> histórias de usuário inacabadas}}",
             "UNFINISHED_STORYLESS_TASKS_COUNT": "{total, plural, =1{<strong>#</strong> tarefa sem história inacabada} other{<strong>#</strong> tarefas sem história inacabadas}}",
-            "UNFINISHED_ISSUES_COUNT": "{total, plural, =1{<strong>#</strong> issue inacabada} other{<strong>#</strong> issues inacabadas}}",
+            "UNFINISHED_ISSUES_COUNT": "{total, plural, =1{<strong>#</strong> problema inacabado} other{<strong>#</strong> problemas inacabados}}",
             "WARNING_ISSUES_NOT_MOVED_TITLE": "Você acabou de mover todas as histórias de usuário e tarefas, e a sprint será fechada",
-            "WARNING_ISSUES_NOT_MOVED": "As issues permanecerão na sprint e não serão removidas",
+            "WARNING_ISSUES_NOT_MOVED": "Os problemas permanecerão na sprint e não serão removidos",
             "WARNING_SPRINT_STILL_OPEN_TITLE": "{total, plural, =1{Você acabou de mover # item!} other{Você acabou de mover # itens!}}",
             "WARNING_SPRINT_STILL_OPEN": "Observe que a sprint {{sprintName}} <strong>permanecerá aberta</strong> enquanto contiver itens inacabados."
         }
@@ -1607,9 +1607,9 @@
         "PAGE_TITLE": "Apontamentos - {{projectName}}",
         "PAGE_DESCRIPTION": "O painel de problemas do projeto {{projectName}}: {{projectDescription}}",
         "SECTION_NAME": "Problema",
-        "ACTION_NEW_ISSUE": "NOVA ISSUE",
-        "ACTION_ATTACH_SPRINT": "Anexar issue à Sprint",
-        "ACTION_DETACH_SPRINT": "Desanexar issue da Sprint",
+        "ACTION_NEW_ISSUE": "NOVO PROBLEMA",
+        "ACTION_ATTACH_SPRINT": "Anexar problema à Sprint",
+        "ACTION_DETACH_SPRINT": "Desanexar problema da Sprint",
         "EXTERNAL_REFERENCE": "Esse problema foi criado a partir de",
         "GO_TO_EXTERNAL_REFERENCE": "Ir para a origem",
         "ACTION_DELETE": "Problema excluído",
@@ -1623,14 +1623,14 @@
             "SEVERITY": "Gravidade",
             "TYPE": "Tipo"
         },
-        "FILTER_ISSUES": "Filtrar issues",
+        "FILTER_ISSUES": "Filtrar problemas",
         "CONFIRM_DETACH_FROM_SPRINT": {
-            "TITLE": "Desanexar issue da sprint",
-            "MESSAGE": "Você está prestes a desanexar a issue da sprint <strong>{{ sprintName }}<strong>"
+            "TITLE": "Desanexar problema da sprint",
+            "MESSAGE": "Você está prestes a desanexar o problema da sprint <strong>{{ sprintName }}<strong>"
         },
         "CONFIRM_CHANGE_FROM_SPRINT": {
-            "TITLE": "Anexar issue à sprint",
-            "MESSAGE": "<strong>Esta issue está atualmente anexada à sprint {{ oldSprintName }}</strong>. Você está prestes a desanexá-la dessa sprint e anexá-la à sprint <strong>{{ newSprintName }}.</strong>"
+            "TITLE": "Anexar problema à sprint",
+            "MESSAGE": "<strong>Este problema está atualmente anexado à sprint {{ oldSprintName }}</strong>. Você está prestes a desanexá-lo dessa sprint e anexá-lo à sprint <strong>{{ newSprintName }}.</strong>"
         },
         "TABLE": {
             "COLUMNS": {
@@ -1891,7 +1891,7 @@
             },
             "STEP2": {
                 "TITLE": "Trabalhando em",
-                "TEXT": "Aqui você encontrará as histórias de usuário, tarefas e issues em que está trabalhando."
+                "TEXT": "Aqui você encontrará as histórias de usuário, tarefas e problemas em que está trabalhando."
             },
             "STEP3": {
                 "TITLE": "Observando",
