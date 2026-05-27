@@ -2,10 +2,24 @@
     border-top: 1px solid $whitish;
     display: flex;
     z-index: $first-layer;
+    @include mobile {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        touch-action: pan-x;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
     .tab {
         color: $gray-light;
         display: flex;
         padding: 1rem;
+        white-space: nowrap;
+        @include mobile {
+            flex-shrink: 0;
+        }
         &:hover,
         &.active {
             color: $gray;
