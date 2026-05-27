@@ -32,6 +32,20 @@
             span(translate="COMMON.WYSIWYG.MARKDOWN_HELP")
 
 .tools(ng-class="{visible: editMode}")
+    button.tg-wysiwyg-camera(
+        type="button"
+        ng-click="openCamera($event)"
+        title="Câmera"
+    )
+        tg-svg(svg-icon="icon-camera")
+
+    input.tg-wysiwyg-camera-input(
+        type="file"
+        accept="image/*"
+        capture="environment"
+        tg-file-change="onCameraFile(files)"
+    )
+
     a.e2e-save-editor(
         variant="primary"
         class="btn-small"

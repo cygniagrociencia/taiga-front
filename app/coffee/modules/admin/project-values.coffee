@@ -344,6 +344,8 @@ SortableSwimlanes = () ->
             copySortSource: false,
             copy: false,
             mirrorContainer: tdom[0],
+            moves: (item, container, handle) ->
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->
@@ -421,6 +423,8 @@ ProjectValuesDirective = ($log, $repo, $confirm, $location, animationFrame, $tra
             copySortSource: false,
             copy: false,
             mirrorContainer: tdom[0],
+            moves: (item, container, handle) ->
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->

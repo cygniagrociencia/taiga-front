@@ -42,9 +42,16 @@
 
 .ticket-data {
     background: $grey-02;
+    box-sizing: border-box;
+    display: block;
     flex-basis: 300px;
     max-width: 300px;
     padding: 1rem;
+    @include until($tablet) {
+        flex-basis: auto;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .ticket-data-container {
@@ -117,6 +124,12 @@
     }
     .priority-data {
         @include category-choices;
+    }
+    .clickable .level-data .icon-chevron-down {
+        fill: $color-link-tertiary;
+        height: .75rem;
+        margin-inline-start: .5rem;
+        width: .75rem;
     }
 }
 
@@ -249,20 +262,27 @@
 
 .ticket-users-actions {
     display: flex;
-    margin: .5rem -.25rem 0;
+    flex-wrap: wrap;
+    gap: .25rem;
+    margin: .5rem 0 0;
     .ticket-users-action {
+        align-items: center;
         background: $white;
         color: $gray;
         cursor: pointer;
         display: flex;
-        flex-grow: 1;
+        flex: 1 1 100%;
         font-size: .9rem;
         justify-content: center;
-        line-height: 2rem;
-        margin: 0 .25rem;
+        line-height: 1.2;
+        min-width: 0;
+        padding: .5rem .25rem;
         text-align: center;
+        white-space: normal;
+        word-break: break-word;
         svg {
             fill: $gray;
+            flex-shrink: 0;
             height: .75rem;
             width: .75rem;
         }

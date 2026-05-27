@@ -11,6 +11,15 @@
             max-width: 3rem;
         }
     }
+    @include until($tablet) {
+        margin-top: 1rem;
+        overflow-x: auto;
+        .epics-table-header,
+        .epic-row,
+        .story-row {
+            min-width: 720px;
+        }
+    }
 }
 
 .epics-table-header {

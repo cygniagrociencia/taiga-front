@@ -19,3 +19,12 @@
 .wiki-main {
     padding-top: 1.5rem;
 }
+
+@include until($tablet) {
+    .wiki {
+        max-width: 100%;
+    }
+    .wiki-main {
+        padding-top: 1rem;
+    }
+}

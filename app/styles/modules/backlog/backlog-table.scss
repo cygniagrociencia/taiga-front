@@ -22,9 +22,11 @@
     .backlog-table-title,
     .row {
         .draggable-us-row {
+            cursor: move;
             flex-grow: 0;
             flex-shrink: 0;
             margin-inline-end: .5rem;
+            touch-action: none;
             tg-svg {
                 svg {
                     @include svg-size(1rem);
@@ -302,7 +304,6 @@
         background-color: $color-gray100;
         border: 1px solid transparent;
         border-radius: 3px;
-        cursor: move;
         flex-wrap: nowrap;
         position: relative;
         &:hover:not(.blocked) {
@@ -504,5 +505,18 @@
 .empty-large {
     .row {
         display: none;
+    }
+}
+
+@include until($tablet) {
+    .backlog-table {
+        overflow-x: auto;
+    }
+    .backlog-table-header {
+        position: static;
+    }
+    .backlog-table-header,
+    .backlog-table-body {
+        min-width: 640px;
     }
 }

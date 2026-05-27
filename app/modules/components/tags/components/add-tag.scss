@@ -58,4 +58,17 @@ $tag-input-width: 250px;
             transition-delay: .1s;
         }
     }
+    @include until($tablet) {
+        flex-wrap: wrap;
+        max-width: 100%;
+        width: 100%;
+        input {
+            flex: 1 1 auto;
+            min-width: 0;
+            width: auto;
+        }
+        .save {
+            margin: .5rem 0 0 .25rem;
+        }
+    }
 }

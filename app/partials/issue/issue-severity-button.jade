@@ -10,6 +10,9 @@
     .level-data
         span.label <%- severity.name %>
         span.level-color(style!="background-color:<%- severity.color %>")
+        <% if(editable){ %>
+        tg-svg(svg-icon="icon-chevron-down")
+        <% } %>
 
     ul.popover.pop-severity
         <% _.each(severityes, function(sv) { %>

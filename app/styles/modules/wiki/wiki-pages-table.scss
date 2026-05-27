@@ -45,4 +45,42 @@
             padding: .5rem;
         }
     }
+    .field-label {
+        display: none;
+    }
+    @include until($tablet) {
+        .row.title {
+            display: none;
+        }
+        .row.table-main {
+            align-items: stretch;
+            border-bottom: 2px solid darken($whitish, 4%);
+            flex-direction: column;
+            gap: .15rem;
+            padding: .75rem .5rem;
+        }
+        .title-field,
+        .editions-field,
+        .creator-field,
+        .created-field,
+        .last-modifier-field,
+        .modified-field {
+            flex-basis: auto;
+            margin-right: 0;
+            text-align: left;
+            width: 100%;
+        }
+        .title-field {
+            @include font-size(medium);
+            @include font-type(medium);
+            margin-bottom: .25rem;
+        }
+        .field-label {
+            color: $color-link-tertiary;
+            display: block;
+            font-size: .7rem;
+            margin-top: .35rem;
+            text-transform: uppercase;
+        }
+    }
 }

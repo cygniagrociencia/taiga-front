@@ -5,23 +5,18 @@ tg-related-userstory-row {
     display: flex;
     padding: .5rem 0 .5rem .5rem;
     &.sortable {
-        cursor: move;
         &:hover {
             background: $primary-lighter;
             .userstory-settings {
                 opacity: 1;
                 transition: all .2s ease-in;
             }
-            .icon-drag {
-                opacity: 1;
-            }
         }
         .icon-drag {
             @include svg-size(.75rem);
             cursor: move;
-            fill: $whitish;
-            opacity: 0;
-            transition: opacity .1s;
+            fill: $color-link-primary;
+            touch-action: none;
         }
     }
     .status {
@@ -136,5 +131,67 @@ tg-related-userstory-row {
             }
         }
     }
-
+    @include until($tablet) {
+        column-gap: .5rem;
+        display: grid;
+        grid-template-areas:
+            'drag name     name     settings'
+            'drag project  status   status'
+            'drag assigned assigned assigned';
+        grid-template-columns: auto auto minmax(0, 1fr) auto;
+        padding: .75rem .5rem;
+        row-gap: .25rem;
+        .icon-drag {
+            align-self: center;
+            grid-area: drag;
+        }
+        .userstory-name {
+            grid-area: name;
+            margin-right: 0;
+            min-width: 0;
+        }
+        .related-text {
+            flex-wrap: wrap;
+            margin-right: 0;
+            min-width: 0;
+        }
+        .related-subject {
+            overflow-wrap: anywhere;
+        }
+        .userstory-settings {
+            grid-area: settings;
+            opacity: 1;
+            width: auto;
+            svg {
+                margin-right: 0;
+            }
+        }
+        .project {
+            align-items: center;
+            display: flex;
+            flex-basis: auto;
+            grid-area: project;
+            width: auto;
+            img {
+                width: 1.5rem;
+            }
+        }
+        .status {
+            align-items: center;
+            display: flex;
+            flex-basis: auto;
+            grid-area: status;
+            justify-self: end;
+            width: auto;
+        }
+        .assigned-to-column {
+            grid-area: assigned;
+            width: auto;
+            .avatar img {
+                flex-basis: 1.5rem;
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
 }

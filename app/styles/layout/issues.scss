@@ -74,3 +74,27 @@
         width: 185px;
     }
 }
+
+@include until($tablet) {
+    .issue-container {
+        display: block;
+        .filters-bar {
+            padding-inline-end: 0;
+            position: static;
+            width: 100%;
+        }
+    }
+    .issue-main {
+        padding-left: 0;
+    }
+    .issue-table-options-start {
+        flex-wrap: wrap;
+        gap: .25rem;
+        width: 100%;
+        tg-input-search {
+            margin-inline-end: 0;
+            margin-inline-start: 0;
+            width: 100%;
+        }
+    }
+}

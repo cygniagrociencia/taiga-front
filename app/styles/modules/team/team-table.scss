@@ -123,4 +123,46 @@
         stroke: $color-link-primary;
         top: .15rem;
     }
+    .attribute-label {
+        display: none;
+    }
+    @include until($tablet) {
+        .team-header {
+            display: none;
+        }
+        .row {
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .username {
+            flex-basis: auto;
+            min-width: 0;
+            width: 100%;
+        }
+        .member-stats {
+            border-top: 1px solid $color-gray100;
+            flex-direction: column;
+            padding-top: .5rem;
+            width: 100%;
+        }
+        .attribute {
+            align-items: center;
+            border-bottom: 1px solid $color-gray100;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: space-between;
+            padding: .5rem .25rem;
+            text-align: left;
+            width: 100%;
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+        .attribute-label {
+            color: $color-link-tertiary;
+            display: inline-block;
+            font-size: .85rem;
+            margin-right: .5rem;
+        }
+    }
 }
