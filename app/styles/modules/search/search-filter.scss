@@ -3,11 +3,25 @@
     display: flex;
     margin-bottom: 0;
     z-index: $first-layer;
+    @include mobile {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        touch-action: pan-x;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        li {
+            flex-shrink: 0;
+        }
+    }
     a {
         background: $color-white;
         color: $color-gray400;
         display: flex;
         padding: 1rem 1.25rem;
+        white-space: nowrap;
         &.active {
             border-left: 1px solid $color-gray400;
             border-right: 1px solid $color-gray400;
