@@ -146,4 +146,34 @@
             right: 5%;
         }
     }
+
+    @include until($tablet) {
+        .single-project-intro {
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .project-logo {
+            margin-right: 0;
+            width: 4rem;
+        }
+        .intro-options {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .5rem;
+        }
+        .project-data {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .timeline {
+            margin-right: 0;
+            max-width: 100%;
+            width: 100%;
+        }
+        .involved-data {
+            flex-basis: auto;
+            width: 100%;
+        }
+    }
 }

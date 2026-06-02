@@ -38,7 +38,7 @@ class SearchController extends mixOf(taiga.Controller, taiga.PageMixin)
     ]
 
     constructor: (@scope, @repo, @rs, @params, @q, @location, @appMetaService, @navUrls, @translate, @errorHandlingService, @projectService) ->
-        @scope.sectionName = "Search"
+        @scope.sectionName = @translate.instant("SEARCH.SECTION_NAME")
 
         @.loadInitialData()
 

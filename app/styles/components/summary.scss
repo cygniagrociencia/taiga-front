@@ -89,6 +89,28 @@ $summary-background: $grayer;
             transform: translateY(-65px);
         }
     }
+
+    @include until($tablet) {
+        gap: .5rem;
+        height: auto;
+        min-height: 65px;
+        overflow: visible;
+        padding: .75rem 1rem;
+        .summary-stats {
+            margin: 0;
+        }
+        .stats {
+            margin-left: 0;
+        }
+    }
+}
+
+@include until($tablet) {
+    .summary-progress-bar {
+        flex-basis: 100%;
+        margin-right: 0;
+        width: 100%;
+    }
 }
 
 .summary-progress-bar {

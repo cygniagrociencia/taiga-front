@@ -23,8 +23,6 @@
     }
     .custom-field-options {
         margin: 0;
-        opacity: 0;
-        transition: opacity .2s linear;
         a {
             display: inline-block;
         }
@@ -65,6 +63,9 @@
             &.wysiwyg {
                 white-space: normal;
             }
+        }
+        @include until($tablet) {
+            padding: 0;
         }
     }
     .custom-field-value-container {
@@ -155,11 +156,6 @@
 
             .custom-field-options {
                 padding-top: .5rem;
-            }
-        }
-        &:hover {
-            .custom-field-options {
-                opacity: 1;
             }
         }
         &.editable {

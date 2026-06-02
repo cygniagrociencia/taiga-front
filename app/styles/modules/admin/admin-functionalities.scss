@@ -77,4 +77,52 @@
             align-self: flex-start;
         }
     }
+    @include until($tablet) {
+        .module {
+            display: grid;
+            grid-column-gap: .75rem;
+            grid-row-gap: .25rem;
+            grid-template-areas:
+                'icon name activation'
+                'icon desc desc';
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            padding: 1rem .5rem;
+        }
+        .module-icon {
+            grid-area: icon;
+            margin: 0;
+            .icon {
+                @include svg-size(2.25rem);
+            }
+        }
+        .module-name {
+            align-self: center;
+            flex-basis: auto;
+            grid-area: name;
+            margin: 0;
+        }
+        .module-desc {
+            grid-area: desc;
+            margin: 0;
+        }
+        .module-activation {
+            align-self: center;
+            grid-area: activation;
+        }
+        .module .module-desc-options,
+        .module .videoconference-attributes {
+            flex-direction: column;
+            fieldset {
+                margin: .25rem 0;
+                width: 100%;
+            }
+            input {
+                width: 100%;
+            }
+            .options {
+                align-self: flex-end;
+                margin-top: .5rem;
+            }
+        }
+    }
 }

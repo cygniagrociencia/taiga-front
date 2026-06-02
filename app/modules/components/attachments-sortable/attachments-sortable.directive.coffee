@@ -14,7 +14,9 @@ AttachmentSortableDirective = ($parse) ->
             copySortSource: false,
             copy: false,
             mirrorContainer: el[0],
-            moves: (item) -> return $(item).is('div[tg-bind-scope]')
+            moves: (item, container, handle) ->
+                return false if not $(item).is('div[tg-bind-scope]')
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->

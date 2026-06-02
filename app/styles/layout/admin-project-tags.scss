@@ -32,6 +32,22 @@
             opacity: 1;
         }
     }
+    @include until($tablet) {
+        align-items: stretch;
+        flex-direction: column;
+        gap: .5rem;
+        padding: .75rem;
+        .color-column,
+        .tag-name,
+        .options-column {
+            flex-basis: auto;
+            margin-right: 0;
+            width: 100%;
+        }
+        input[type='text'] {
+            width: 100%;
+        }
+    }
 }
 
 .tags-table {
@@ -52,6 +68,15 @@
                 cursor: default;
                 padding-left: 1rem;
             }
+        }
+    }
+    @include until($tablet) {
+        .table-tags-editor .row.header-tag-row {
+            display: none;
+        }
+        .row.tag-row {
+            align-items: center;
+            width: 100% !important; /* stylelint-disable-line declaration-no-important */
         }
     }
     .color-filter {

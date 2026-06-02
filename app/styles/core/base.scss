@@ -127,6 +127,27 @@ tg-svg {
     flex: 1;
     min-width: 0;
     padding: 1rem;
+    @include until($tablet) {
+        padding: .75rem;
+    }
+}
+
+@include until($tablet) {
+    body {
+        overflow-x: hidden;
+    }
+    body.mobile-menu-open {
+        overflow: hidden;
+    }
+    .wrapper {
+        display: block;
+        height: auto;
+        min-height: 0;
+    }
+    .menu-secondary,
+    .menu-tertiary {
+        min-height: 0;
+    }
 }
 
 .header-with-actions {
@@ -136,6 +157,11 @@ tg-svg {
     margin-bottom: 1rem;
     header {
         width: 100%;
+    }
+    @include until($tablet) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .5rem;
     }
 }
 

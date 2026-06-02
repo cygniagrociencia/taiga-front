@@ -3,6 +3,10 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
+        @include until($tablet) {
+            flex-direction: column;
+            gap: .5rem;
+        }
     }
     svg {
         @include svg-size(1.2rem);
@@ -87,6 +91,26 @@
                 background: $color-link-primary;
                 color: $white;
             }
+        }
+    }
+    @include until($tablet) {
+        flex-wrap: wrap;
+        gap: .25rem;
+        justify-content: center;
+        .filter-list {
+            flex-wrap: wrap;
+            margin-left: 0;
+        }
+    }
+}
+
+@include until($tablet) {
+    .filter-discover-search {
+        flex-wrap: wrap;
+        gap: .25rem .5rem;
+        justify-content: center;
+        .discover-search-filter {
+            margin-right: 0;
         }
     }
 }

@@ -191,3 +191,43 @@
         color: $color-link-tertiary;
     }
 }
+
+@include until($tablet) {
+    .scrum {
+        display: block;
+    }
+    .backlog-manager {
+        display: block;
+        &.expanded {
+            display: block;
+        }
+    }
+    .backlog-filter {
+        margin-bottom: 1rem;
+        position: static;
+        tg-filter {
+            padding: .5rem;
+        }
+    }
+    .backlog-top {
+        height: auto;
+        position: static;
+    }
+    .backlog-header {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .backlog-table-options {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .backlog-table-options-start,
+    .backlog-table-options-end {
+        flex-wrap: wrap;
+        gap: .25rem;
+
+        tg-input-search {
+            width: 100%;
+        }
+    }
+}

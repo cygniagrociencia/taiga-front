@@ -39,4 +39,19 @@
             @include svg-size(1.5rem);
         }
     }
+    @include until($tablet) {
+        &.summary {
+            height: auto;
+            min-height: 65px;
+            overflow: visible;
+        }
+        div {
+            margin-right: .75rem;
+        }
+        .username {
+            font-size: 1rem;
+            white-space: normal;
+            word-break: break-word;
+        }
+    }
 }

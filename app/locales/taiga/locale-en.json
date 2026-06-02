@@ -1674,6 +1674,7 @@
         "UNCLASSIFIED_USER_STORIES_TOOLTIP": "The user stories that are not part of any swimlane are here."
     },
     "SEARCH": {
+        "SECTION_NAME": "Search",
         "PAGE_TITLE": "Search - {{projectName}}",
         "PAGE_DESCRIPTION": "Search anything, user stories, issues, tasks or wiki pages, in the project {{projectName}}: {{projectDescription}}",
         "FILTER_EPICS": "Epics",

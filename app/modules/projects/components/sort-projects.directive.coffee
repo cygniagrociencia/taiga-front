@@ -14,7 +14,9 @@ SortProjectsDirective = (currentUserService) ->
             copySortSource: false,
             copy: false,
             mirrorContainer: el[0],
-            moves: (item) -> return $(item).hasClass('list-itemtype-project')
+            moves: (item, container, handle) ->
+                return false if not $(item).hasClass('list-itemtype-project')
+                return $(handle).closest('[svg-icon="icon-draggable"], .icon-draggable').length > 0
         })
 
         drake.on 'dragend', (item) ->

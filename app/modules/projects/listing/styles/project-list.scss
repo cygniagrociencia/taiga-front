@@ -42,21 +42,31 @@
     }
     .project-list-section {
         display: flex;
+        @include mobile {
+            flex-direction: column;
+        }
     }
     .project-list {
         flex: 1;
         margin-right: 2rem;
+        @include mobile {
+            margin-right: 0;
+        }
     }
     .help-area {
         @include font-size(small);
         color: $gray-light;
         width: 200px;
+        @include mobile {
+            margin-bottom: 1rem;
+            order: -1;
+            width: 100%;
+        }
     }
     .list-itemtype-project {
         background: rgba($white, .6);
         &:hover {
             background: rgba($primary-light, .1);
-            cursor: move;
             transition: background .3s;
             .drag {
                 opacity: 1;
@@ -95,7 +105,12 @@
     }
     .drag {
         align-self: center;
+        cursor: grab;
         opacity: 0;
+        touch-action: none;
+        @include mobile {
+            opacity: 1;
+        }
         svg {
             fill: $gray-light;
             height: 1.1rem;

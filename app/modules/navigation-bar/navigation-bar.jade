@@ -5,8 +5,19 @@
 //-
 //- Copyright (c) 2021-present Kaleidos INC
 
+.mobile-menu-backdrop(ng-click="vm.toggleMobileMenu()")
 nav.navbar(ng-if="vm.isEnabledHeader")
     .nav-left
+        button.mobile-menu-toggle(
+            ng-if="vm.isAuthenticated"
+            type="button"
+            ng-click="vm.toggleMobileMenu()"
+            aria-label="Toggle menu"
+        )
+            span.mobile-menu-toggle-bar
+            span.mobile-menu-toggle-bar
+            span.mobile-menu-toggle-bar
+
         a.logo(
             ng-if="!vm.isAuthenticated"
             href="https://taiga.io/",

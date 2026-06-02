@@ -40,11 +40,17 @@ BacklogSortableDirective = () ->
                 copySortSource: false,
                 copy: false,
                 isContainer: (el) -> return el.classList.contains('sprint-table'),
-                moves: (item) ->
+                moves: (item, container, handle) ->
                     if !$(item).hasClass('row')
                         return false
 
-                    return true
+                    node = handle
+                    while node and node != container
+                        cls = node.getAttribute?('class') or ''
+                        if cls.indexOf('draggable-us-row') >= 0
+                            return true
+                        node = node.parentNode
+                    return false
             })
 
             drake.on 'drop', (item, target, source, sibling) ->

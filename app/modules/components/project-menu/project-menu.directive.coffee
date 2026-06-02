@@ -13,12 +13,19 @@ ProjectMenuDirective = (projectService, lightboxFactory) ->
         projectChange = () ->
             if projectService.project
                 ctrl.show()
+                document.body.classList.add('has-project-menu')
             else
                 ctrl.hide()
+                document.body.classList.remove('has-project-menu')
+                document.body.classList.remove('mobile-menu-open')
 
         scope.$watch ( () ->
             return projectService.project
         ), projectChange
+
+        scope.$on "$destroy", () ->
+            document.body.classList.remove('has-project-menu')
+            document.body.classList.remove('mobile-menu-open')
 
         fixed = false
         topBarHeight = 48

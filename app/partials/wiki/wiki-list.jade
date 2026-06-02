@@ -51,14 +51,19 @@ div.wrapper(
                         href=""
                         tg-nav="project-wiki-page:project=project.slug,slug=wikipage.slug"
                     ) {{wikipage.slug}}
+                span.field-label(translate="WIKI.PAGES_LIST_COLUMNS.EDITIONS")
                 .editions-field {{wikipage.editions}}
+                span.field-label(translate="WIKI.PAGES_LIST_COLUMNS.CREATOR")
                 .creator-field(
                     tg-user-display
                     tg-user-id="{{wikipage.owner}}"
                 )
+                span.field-label(translate="WIKI.PAGES_LIST_COLUMNS.CREATED")
                 .created-field(tg-bo-bind="wikipage.created_date|momentFormat:'DD MMM YYYY HH:mm'")
+                span.field-label(translate="WIKI.PAGES_LIST_COLUMNS.LAST_MODIFIER")
                 .last-modifier-field(
                     tg-user-display
                     tg-user-id="{{wikipage.last_modifier}}"
                 )
+                span.field-label(translate="WIKI.PAGES_LIST_COLUMNS.MODIFIED")
                 .modified-field(tg-bo-bind="wikipage.modified_date|momentFormat:'DD MMM YYYY HH:mm'")

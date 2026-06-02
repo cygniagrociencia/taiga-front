@@ -1,3 +1,12 @@
+fieldset:has(tg-attachments-simple) {
+    min-width: 0;
+}
+
+tg-attachments-simple {
+    display: block;
+    min-width: 0;
+}
+
 .attachment-simple {
     &.attachment-dragover {
         .attachments-empty {
@@ -9,7 +18,13 @@
     .attachment-name {
         flex-basis: 70%;
         flex-grow: 0;
+        min-width: 0;
         width: 70%;
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
     .single-attachment {
         padding: .5rem 0 .5rem .5rem;
@@ -65,9 +80,17 @@
     }
     .attachment-name {
         flex-grow: 1;
-        flex-shrink: 0;
+        flex-shrink: 1;
+        min-width: 0;
         padding-right: 1rem;
+        a {
+            align-items: center;
+            display: flex;
+            min-width: 0;
+            overflow: hidden;
+        }
         span {
+            min-width: 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -118,8 +141,9 @@
                 fill: $color-link-red;
             }
         }
-        .icon-drag {
+        a.settings:has(.icon-draggable) {
             cursor: move;
+            touch-action: none;
         }
     }
     .editable-attachment-deprecated {
@@ -147,6 +171,43 @@
         &::-webkit-progress-bar,
         &::-moz-progress-bar {
             background: $color-link-primary;
+        }
+    }
+
+    @include until($tablet) {
+        .single-attachment {
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: .75rem .5rem;
+            row-gap: .25rem;
+        }
+        .attachment-name {
+            flex-basis: 100%;
+            padding-right: 0;
+        }
+        .attachment-comments,
+        .editable-attachment-comment {
+            flex: 1 1 100%;
+            margin-right: 0;
+            order: 3;
+            span {
+                overflow-wrap: anywhere;
+                white-space: normal;
+            }
+        }
+        .attachment-size {
+            flex-basis: auto;
+            flex-grow: 1;
+            order: 2;
+            text-align: left;
+        }
+        .attachment-settings {
+            flex-basis: auto;
+            order: 2;
+            .settings {
+                opacity: 1;
+                padding: .25rem;
+            }
         }
     }
 }

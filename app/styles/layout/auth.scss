@@ -26,6 +26,8 @@
     }
     .auth-container {
         flex-basis: 400px;
+        max-width: 100%;
+        padding: 0 1rem;
     }
     .logo-svg {
         text-align: center;
@@ -33,6 +35,12 @@
         svg {
             height: 8rem;
             width: 8rem;
+        }
+        @include until($tablet) {
+            svg {
+                height: 5rem;
+                width: 5rem;
+            }
         }
     }
     .logo {

@@ -61,4 +61,63 @@
             margin: 0;
         }
     }
+
+    @include until($tablet) {
+        flex-direction: column;
+        min-height: 0;
+        padding: 1rem 0;
+
+        .profile-bar {
+            margin-bottom: 1rem;
+            margin-right: 0;
+            width: 100%;
+        }
+        .main {
+            flex-direction: column;
+            min-width: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .timeline-wrapper {
+            margin-right: 0;
+            min-width: 0;
+            width: 100%;
+        }
+        .profile-sidebar {
+            flex-basis: auto;
+            margin-top: 1rem;
+            width: 100%;
+            .button-gray {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        .empty-tab {
+            padding: 2rem 1rem;
+            svg {
+                height: 6rem;
+                margin: 1rem auto;
+                width: 6rem;
+            }
+        }
+    }
+}
+
+@include until($tablet) {
+    .profile-bar {
+        .profile-image-wrapper {
+            height: auto;
+            margin: 0 auto 1rem;
+            max-width: 200px;
+        }
+    }
+    .profile-content-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        .tab {
+            flex-shrink: 0;
+            padding: .75rem .5rem;
+            white-space: nowrap;
+        }
+    }
 }

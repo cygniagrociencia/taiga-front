@@ -97,4 +97,35 @@
         flex-basis: 50px;
         flex-grow: 1;
     }
+    .field-label {
+        display: none;
+    }
+    @include until($tablet) {
+        .row.title {
+            display: none;
+        }
+        .row {
+            border-bottom: 2px solid darken($whitish, 4%);
+            flex-direction: column;
+            gap: .25rem;
+            padding: .75rem 0;
+        }
+        .row-member,
+        .row-admin,
+        .row-role,
+        .row-status {
+            flex-basis: auto;
+            min-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+        .field-label {
+            color: $color-link-tertiary;
+            display: block;
+            font-size: .75rem;
+            margin-top: .5rem;
+            text-transform: uppercase;
+        }
+    }
 }

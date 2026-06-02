@@ -14,6 +14,9 @@ section.admin-membership-table.basic-table
 
     .row(ng-repeat="member in memberships")
         div.row-member(tg-memberships-row-avatar="member")
+        span.field-label(translate="ADMIN.MEMBERSHIP.COLUMN_ADMIN")
         div.row-admin(tg-memberships-row-admin-checkbox="member")
+        span.field-label(translate="ADMIN.MEMBERSHIP.COLUMN_ROLE")
         div.row-role(tg-memberships-row-role-selector="member")
+        span.field-label(translate="ADMIN.MEMBERSHIP.COLUMN_STATUS")
         div.row-status(tg-memberships-row-actions="member")

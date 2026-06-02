@@ -1,5 +1,11 @@
 .issues-table {
     margin-bottom: 2rem;
+    @include until($tablet) {
+        overflow-x: auto;
+        .row {
+            min-width: 720px;
+        }
+    }
 
     .tooltip {
         @include tooltip(
@@ -308,6 +314,28 @@
         &.fix {
             bottom: 0;
             top: auto;
+        }
+        @include mobile {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            bottom: 0;
+            box-shadow: 0 -4px 16px rgba(0, 0, 0, .15);
+            left: 0;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 1rem;
+            position: fixed;
+            right: 0;
+            top: auto;
+            width: 100%;
+            z-index: $lightbox-layer;
+            li {
+                margin-bottom: .5rem;
+                a {
+                    display: block;
+                    padding: .75rem .5rem;
+                }
+            }
         }
     }
     .options {

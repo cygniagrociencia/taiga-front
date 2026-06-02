@@ -86,3 +86,35 @@
         width: 185px;
     }
 }
+
+@include until($tablet) {
+    .kanban {
+        height: auto;
+        max-height: none;
+        padding: .5rem;
+    }
+    .kanban-manager {
+        display: block;
+        height: auto;
+        overflow-x: auto;
+        &.expanded {
+            display: block;
+        }
+    }
+    .kanban-header {
+        padding: 0 0 .75rem 0;
+    }
+    .taskboard-actions {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .kanban-table-options-start {
+        flex-wrap: wrap;
+        gap: .25rem;
+        width: 100%;
+        tg-input-search {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}

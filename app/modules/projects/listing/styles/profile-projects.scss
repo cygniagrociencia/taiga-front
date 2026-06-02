@@ -31,5 +31,13 @@
             fill: $white;
             stroke: $red-light;
         }
+        @include until($tablet) {
+            flex-direction: column;
+            min-height: 0;
+            row-gap: .5rem;
+            .list-itemtype-project-right {
+                width: 100%;
+            }
+        }
     }
 }

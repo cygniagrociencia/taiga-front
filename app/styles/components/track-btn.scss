@@ -60,6 +60,17 @@
     min-width: 140px;
     padding: .25rem 1rem;
     row-gap: .5rem;
+    @include until($tablet) {
+        flex-basis: auto;
+        min-width: 0;
+        padding: .25rem .5rem;
+    }
+}
+
+@include until($tablet) {
+    .track-buttons-container {
+        flex-wrap: wrap;
+    }
 }
 
 .track-icon {
