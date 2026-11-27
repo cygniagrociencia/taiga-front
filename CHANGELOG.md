@@ -1,8 +1,25 @@
 # Changelog
 
-## 6.9.1 (unreleased)
+## 6.10.4 (unreleased)
 
 - ...
+
+## 6.10.3 (2026-05-14)
+- fix: intermitent error when changing project name
+- fix: docker contrib tags pinned to the right version
+
+## 6.10.2 (2026-05-07)
+- fix: add missing parentheses to isArchived call in tag component
+
+## 6.10.1 (2026-05-06)
+- feat: restore issue voting
+
+## 6.10.0 (2026-04-20)
+- Allow archiving projects.
+
+## 6.9.1 (2026-03-23)
+
+- Fix regexp in ConfirmService
 
 ## 6.9.0 (2025-10-13)
 

@@ -27,16 +27,16 @@ RUN set -eux; \
     mkdir /taiga/dist/plugins; \
     cd /taiga/dist/plugins; \
     # Slack
-    wget https://github.com/taigaio/taiga-contrib-slack/archive/6.9.0.zip -O source.zip; \
-    unzip -j source.zip "taiga-contrib-slack-6.9.0/front/dist/*" -d slack; \
+    wget https://github.com/taigaio/taiga-contrib-slack/archive/6.10.0.zip -O source.zip; \
+    unzip -j source.zip "taiga-contrib-slack-6.10.0/front/dist/*" -d slack; \
     rm source.zip; \
     # Github
-    wget https://github.com/taigaio/taiga-contrib-github-auth/archive/6.9.0.zip -O source.zip; \
-    unzip -j source.zip "taiga-contrib-github-auth-6.9.0/front/dist/*" -d github-auth; \
+    wget https://github.com/taigaio/taiga-contrib-github-auth/archive/6.10.0.zip -O source.zip; \
+    unzip -j source.zip "taiga-contrib-github-auth-6.10.0/front/dist/*" -d github-auth; \
     rm source.zip; \
     # Gitlab
-    wget https://github.com/taigaio/taiga-contrib-gitlab-auth/archive/6.9.0.zip -O source.zip; \
-    unzip -j source.zip "taiga-contrib-gitlab-auth-6.9.0/front/dist/*" -d gitlab-auth; \
+    wget https://github.com/taigaio/taiga-contrib-gitlab-auth/archive/6.10.0.zip -O source.zip; \
+    unzip -j source.zip "taiga-contrib-gitlab-auth-6.10.0/front/dist/*" -d gitlab-auth; \
     rm source.zip; \
     cd /; \
     # Remove unused dependencies
